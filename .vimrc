@@ -10,7 +10,7 @@ set expandtab
 
 set shiftwidth=4
 "シンタックスをオン
-set syntax=ON
+syntax enable
 
 "NeoBundleの設定
 set nocompatible
