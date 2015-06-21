@@ -9,8 +9,12 @@ set autoindent
 set expandtab
 
 set shiftwidth=4
+
 "シンタックスをオン
 syntax enable
+
+"swpファイルを作成しなくする
+set noswapfile
 
 "NeoBundleの設定
 set nocompatible
@@ -22,6 +26,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 "プラグインを入れる
+
+"NERDTree(画面端にファイルエクスプローラーを出すやつ)
+NeoBundle 'scrooloose/nerdtree'
+"NERDTreeのショートカット設定
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
 
 call neobundle#end()
 filetype plugin indent on
