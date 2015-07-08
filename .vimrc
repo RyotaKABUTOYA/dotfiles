@@ -72,6 +72,13 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "ctrilp.vim(ファイルの履歴を出す？)
 NeoBundle "ctrlpvim/ctrlp.vim"
 
+"ソースコードの自動整形
+NeoBundle 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vip)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 call neobundle#end()
 filetype plugin indent on
 
