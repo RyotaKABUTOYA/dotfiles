@@ -20,6 +20,21 @@ syntax enable
 "swpファイルを作成しなくする
 set noswapfile
 
+"ヤンクしたデータをクリップボードでも使えるようにする
+set clipboard=unnamed,autoselect
+
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+
 "NeoBundleの設定
 set nocompatible
 if has('vim_starting')
