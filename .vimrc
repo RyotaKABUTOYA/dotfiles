@@ -84,8 +84,21 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-"ctrilp.vim(ファイルの履歴を出す？)
+"ctrilp.vim(ファイルを検索するやつ
 NeoBundle "ctrlpvim/ctrlp.vim"
+
+" ファイルオープンを便利に
+NeoBundle 'Shougo/unite.vim'
+" Unite.vimで最近使ったファイルを表示できるようにする
+NeoBundle 'Shougo/neomru.vim'
+
+"Uniteのキーバインド設定
+nnoremap [unite]    <Nop>
+nmap <Space>u [unite]
+
+nnoremap <silent> [unite]f : <C-u>Unite file<CR>
+nnoremap <silent> [unite]b : <C-u>Unite buffer<CR>
+nnoremap <silent> [unite]z : <C-u>Unite file_mru<CR>
 
 "ソースコードの自動整形
 NeoBundle 'junegunn/vim-easy-align'
@@ -94,7 +107,25 @@ vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+"全般的な構文エラーチェック
+NeoBundle 'scrooloose/syntastic.git'
+
+"Python用の環境らしい
+
+"入力補完
+NeoBundle 'davidhalter/jedi-vim'
+
+"構文エラーチェック
+NeoBundle 'kevinw/pyflakes-vim'
+
+"PythonのみSyntasticを使用しないようにする設定
+let g:syntastic_mode_map = {
+            \ 'mode': 'active',
+            \ 'active_filetypes': [],
+            \ 'passive_filetypes': ['python']
+            \}
+
+
 call neobundle#end()
 filetype plugin indent on
-
 
