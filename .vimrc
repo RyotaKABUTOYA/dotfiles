@@ -20,6 +20,9 @@ syntax enable
 "swpファイルを作成しなくする
 set noswapfile
 
+"文字コードをUTF-8に設定
+set encoding=utf-8
+
 "ヤンクしたデータをクリップボードでも使えるようにする
 set clipboard=unnamed,autoselect
 
